@@ -1,0 +1,60 @@
+.post {
+    width: 60vw;
+    padding: 20px;
+    margin: 23px;
+    display: flex;
+    flex-direction: column;
+    font-size: .8em;
+    font-weight: 300;
+}
+
+.post-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--color-text-primary);
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 30px;
+}
+
+.post-body {
+    margin: 10px 0;
+    color: var(--color-text-secondary);
+}
+
+.reaction-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.reaction-container i {
+    margin-right: 20px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.comment-area {
+    outline: none;
+}
+
+.comment-btn {
+    background: blue;
+    outline: none;
+    border: none;
+}
+
+.comment-time {
+    color: var(--color-text-secondary);
+    font-size: .8em;
+}
+
+.post-division {
+    border: .5px solid var(--color-division);
+    margin-top: 20px;
+}

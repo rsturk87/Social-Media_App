@@ -65,3 +65,14 @@ a:hover {
 .content__right {
   border: .5px solid var(--color-division);
 }
+
+@media (max-width: 700px) {
+  .content__right {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}

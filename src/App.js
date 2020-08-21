@@ -2,13 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import './App.css';
 import SideBar from './components/SideBar/SideBar.js';
+import RightBar from './components/RightBar/RightBar.js';
 import Country from './pages/Country/Country.js';
 import Edit from './pages/Edit/Edit.js';
 import Home from './pages/Home/Home.js';
 import UserContext from './context/userContext.js';
 
 function App() {
-  const [user, setUser] = useState();
+  let [user, setUser] = useState();
   
   const getUser = () => {
     const userData = sessionStorage.getItem('user');
@@ -51,21 +52,21 @@ function App() {
               city={user.location.city} 
               country={user.location.country}
             />
-          
-            <div className="page-container">
+
+            <UserContext.Provider value={user}>
+              <div className="page-container">
                 <Switch>
                   <Route path='/Country/:country_name' component={Country} />
-                  <Route path='/Edit/' component={Edit} />
+                    <Route path='/Edit/' component={Edit} />
                   <Route exact path='/'>
-                    <UserContext.Provider value={user}>
                       <Home />
-                    </UserContext.Provider>
                   </Route>
                 </Switch>
-            </div>
+              </div>
+            </UserContext.Provider>
 
             <div className="content__right">
-                <h5>terceira coluna</h5>
+              <RightBar />
             </div>
           </>
         }

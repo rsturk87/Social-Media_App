@@ -30,7 +30,7 @@ function SideBar({picture, name, phone, email, city, country}) {
 
       <form onSubmit={doSearch} className="form">
         <input type='text' className="search" placeholder='Search' value={search} onChange={(e)=>setSearch(e.target.value)} />
-        <button className="search-button"><i class="fa fa-search"></i></button>
+        <button className="search-button"><i className="fa fa-search"></i></button>
       </form>
     </div>
   );

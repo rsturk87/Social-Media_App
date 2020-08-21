@@ -6,7 +6,7 @@ function Home() {
     const [userB, setUser] = useState();
   
     const getUserB = () => {
-        fetch('https://randomuser.me/api')
+        fetch('https://randomuser.me/api/?results=20')
         .then(
             res => res.json()
         )
@@ -23,19 +23,19 @@ function Home() {
         () => getUserB(), []
     )
 
-    const getContent = () => {
-        fetch('https://randomuser.me/api')
-        .then(
-            res => res.json()
-        )
-        .then(
-            data => {
-            const result = data.results[0]
-            setUser(result);
-            sessionStorage.setItem('userB', JSON.stringify(result))
-            }
-        )
-    }
+    // const getContent = () => {
+    //     fetch('https://randomuser.me/api')
+    //     .then(
+    //         res => res.json()
+    //     )
+    //     .then(
+    //         data => {
+    //         const result = data.results[0]
+    //         setUser(result);
+    //         sessionStorage.setItem('userB', JSON.stringify(result))
+    //         }
+    //     )
+    // }
 
     let content = 'post teste';
     

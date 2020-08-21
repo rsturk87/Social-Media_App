@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {useParams} from 'react-router-dom';
+import UserContext from '../../context/userContext.js';
 
-function Edit(props) {
-    
+function Edit() {
+    let user = useContext(UserContext);
+
     return (
-        <div className="country">
-            teste
+        <div className="edit">
+            
         </div>
     );
 }

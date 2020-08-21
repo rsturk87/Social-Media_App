@@ -86,3 +86,33 @@ h5 {
     background: var(--color-hover);
     transition: ease-in-out 250ms;
 }
+
+@media (max-width: 1150px) {
+    .search {
+      width: 55px;
+    }
+
+    .search-button {
+        width: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .search {
+      width: 40px;
+    }
+
+    .search-button {
+        width: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .search {
+      width: 90px;
+    }
+
+    .search-button {
+        width: 40px;
+    }
+}

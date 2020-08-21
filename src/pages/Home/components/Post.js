@@ -76,14 +76,14 @@ const PostFooter = () => {
                 picture={user.picture.thumbnail}
                 />
             )}
-            <form onSubmit={postComment}>
+            <form className="comment-form" onSubmit={postComment}>
                 <textarea 
                     className="comment-area" 
                     placeholder="Comment here" 
                     value={text}
                     onChange={(e)=>setText(e.target.value)}
                 />
-                <input className="comment-btn" type='submit' value='Comentar' />
+                <button className="comment-btn" type='submit'><i className="fa fa-paper-plane"></i></button>
             </form>
             <hr className="post-division" />
         </div>
@@ -93,9 +93,11 @@ const PostFooter = () => {
 const Comment = ({picture, fullname, content, time}) => {
     return (
         <div className="comment">
-            <Header picture={picture} fullname={fullname} />
-            <p className="comment-time">{time}</p>
-            <p>{content}</p>
+            <div className="comment-head">
+                <Header picture={picture} fullname={fullname} />
+                <p className="comment-time">{time}</p>
+            </div>
+            <p className="comment-content">{content}</p>
         </div>
     );
 }

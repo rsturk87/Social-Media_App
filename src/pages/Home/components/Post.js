@@ -54,7 +54,7 @@ const PostFooter = () => {
     const [comments, setComments] = useState([]);
     const [text, setText] = useState('');
 
-    const user = useContext(UserContext);
+    const {user} = useContext(UserContext);
 
     const postComment = (e) => {
         e.preventDefault();

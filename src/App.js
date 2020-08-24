@@ -9,7 +9,7 @@ import Home from './pages/Home/Home.js';
 import UserContext from './context/userContext.js';
 
 function App() {
-  let [user, setUser] = useState();
+  const [user, setUser] = useState();
   
   const getUser = () => {
     const userData = sessionStorage.getItem('user');
@@ -39,6 +39,7 @@ function App() {
   )
   
   return (
+    <UserContext.Provider value={{user, setUser}}>
     <div className="App">
       <div className="content">
         {
@@ -53,18 +54,15 @@ function App() {
               country={user.location.country}
             />
 
-            <UserContext.Provider value={user}>
               <div className="page-container">
                 <Switch>
                   <Route path='/Country/:country_name' component={Country} />
-                    <Route path='/Edit/' component={Edit} />
+                  <Route path='/Edit/' component={Edit} />
                   <Route exact path='/'>
-                      <Home />
+                    <Home />
                   </Route>
                 </Switch>
               </div>
-            </UserContext.Provider>
-
             <div className="content__right">
               <RightBar />
             </div>
@@ -72,6 +70,7 @@ function App() {
         }
       </div>
     </div>
+    </UserContext.Provider>
   );
 }
 

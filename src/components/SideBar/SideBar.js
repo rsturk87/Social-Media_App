@@ -15,11 +15,12 @@ function SideBar({picture, name, phone, email, city, country}) {
       </Link>
 
       <img className='avatar' src={picture} alt='foto de perfil' />
+      <div className="name-edit">
       <h2>{name}</h2>
-
       <Link to={'/Edit'}>
-      <h2>Edit</h2>
+      <h4 className="edit-icon"><i className="fas fa-edit"></i></h4>
       </Link>
+      </div>
 
       <h5><i className="fas fa-mobile-alt"></i> {phone}</h5>
       <h5><i className="fas fa-envelope-open-text"></i> {email}</h5>

@@ -24,7 +24,7 @@ function Home() {
     )
 
     // const getContent = () => {
-    //     fetch('https://randomuser.me/api')
+    //     fetch('__to-do')
     //     .then(
     //         res => res.json()
     //     )
@@ -37,7 +37,7 @@ function Home() {
     //     )
     // }
 
-    let content = 'post teste';
+    let content = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis felis ac velit tincidunt suscipit. Etiam velit magna, cursus eu sollicitudin non, pellentesque eget tellus.';
     
     return (
         <div className="home">

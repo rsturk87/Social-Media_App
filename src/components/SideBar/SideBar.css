@@ -26,6 +26,12 @@
     width: 50px;
 }
 
+.name-edit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 h2 {
     color: var(--color-text-primary);
     font-weight: 700;
@@ -55,6 +61,18 @@ h5 {
     font-size: .6em;
     margin: 5px;
     padding: 0;
+}
+
+.edit-icon {
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-secondary);
+    transition: ease-in-out 250ms;
+}
+
+.edit-icon:hover {
+    color: var(--color-hover);
+    transition: ease-in-out 250ms;
 }
 
 .form {

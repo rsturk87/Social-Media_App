@@ -5,6 +5,16 @@ class PostPhotos extends React.Component{
     constructor(props){
         super(props);
         this.API_key = 'cddc64ea8269edd3c07b3ae30fc874e3';
+        var tagsList = [
+            'travel','people','countryside','city','music','design','art',
+            'london','uk','concert','party','colors','gig','tech','spirit',
+            'nature','scotland','ireland','lisbon','wine','pub','manchester',
+            'liverpool','nagoya','drink','urban','guitar','blue','ocean'
+        ];
+
+        var randomNumber = Math.floor(Math.random()*tagsList.length);
+        var randomTag = tagsList[randomNumber];
+        this.tag = randomTag.toString();
 
         this.state = {
             n_photos: props.n_photos || 1,
@@ -19,7 +29,7 @@ class PostPhotos extends React.Component{
     }
 
     fetchData = () => {
-        fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this.API_key}&tags=travel&per_page=${this.state.n_photos}&format=json&nojsoncallback=1`)
+        fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this.API_key}&tags=${this.tag}&per_page=${this.state.n_photos}&format=json&nojsoncallback=1`)
             .then(
                 res => res.json()
             )
